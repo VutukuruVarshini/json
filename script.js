@@ -1,7 +1,7 @@
 
 // JS.js
-const API_URL = "http://localhost:8000/people"; // backend API
-const UPLOAD_URL = "http://localhost:8000/upload"; // upload endpoint for avatars
+const API_URL = "https://vutukuruvarshini.github.io/json/people"        //"http://localhost:8000/people"; // backend API
+const UPLOAD_URL = "https://vutukuruvarshini.github.io/json/upload"                                                //"http://localhost:8000/upload";// upload endpoint for avatars
 
 let currentPage = 1;
 let isLoggedIn = false;
