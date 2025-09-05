@@ -23,7 +23,6 @@ app.use(express.static(frontendDir));
 app.get("/", (req, res) => {
   res.sendFile(path.join(frontendDir, "index.html"));
 });
-
 const PER_PAGE = 6;
 const jsonFilePath = path.join(process.cwd(), "people.json");
 

@@ -13,16 +13,6 @@ import axios from "axios";
 const app = express();
 app.use(cors());
 app.use(bodyParser.json());
-app.use(bodyParser.json());
-
-// Serve frontend files (index.html, style.css, script.js)
-const frontendDir = path.join(process.cwd());
-app.use(express.static(frontendDir));
-
-// Default route → index.html
-app.get("/", (req, res) => {
-  res.sendFile(path.join(frontendDir, "index.html"));
-});
 
 const PER_PAGE = 6;
 const jsonFilePath = path.join(process.cwd(), "people.json");
