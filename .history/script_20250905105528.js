@@ -17,15 +17,6 @@ const loginBtnOption = document.getElementById("login-btn");
 const newEntryBtnOption = document.getElementById("new-entry-btn");
 const logoutBtn = document.getElementById("logout-btn");
 
-
-const personBackBtn = document.getElementById("person-back-btn");
-
-personBackBtn.addEventListener("click", () => {
-  personForm.reset();  // clear new person fields
-  resetView();         // return to Login/New Person choice
-});
-
-
 // --- INITIAL STATE ---
 function resetView() {
   optionContainer.style.display = "block";
@@ -51,7 +42,6 @@ newEntryBtnOption.addEventListener("click", () => {
 });
 
 // --- Render Login Form ---
-
 const loginForm = document.createElement("form");
 loginForm.innerHTML = `
   <h2>Login</h2>
@@ -61,14 +51,11 @@ loginForm.innerHTML = `
    <button type="button" id="login-back-btn">⬅ Back</button>
 `;
 loginContainer.appendChild(loginForm);
-
 // --- Handle Back Button ---
-
 loginForm.querySelector("#login-back-btn").addEventListener("click", () => {
   loginForm.reset();   // clear the login fields
   resetView();         // go back to option-container (Login/New Person)
 });
-
 
 // --- Helper: non-blocking success banner ---
 function showBanner(msg, bg = "lightgreen") {
@@ -82,7 +69,6 @@ function showBanner(msg, bg = "lightgreen") {
   document.body.prepend(bar);
   return bar;
 }
-
 
 // --- LOGIN ---
 loginForm.addEventListener("submit", async (e) => {

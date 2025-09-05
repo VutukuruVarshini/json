@@ -1,7 +1,7 @@
 
 // JS.js
 const API_URL =       "http://localhost:8000/people"; // backend API //"https://vutukuruvarshini.github.io/json/people" 
-const UPLOAD_URL =    "http://localhost:8000/upload";// upload endpoint for avatars// "https://vutukuruvarshini.github.io/json/upload"  
+const UPLOAD_URL =    "http://localhost:8000/upload";// upload endpoint for avatars
 
 let currentPage = 1;
 let isLoggedIn = false;
@@ -16,15 +16,6 @@ const optionContainer = document.getElementById("option-container");
 const loginBtnOption = document.getElementById("login-btn");
 const newEntryBtnOption = document.getElementById("new-entry-btn");
 const logoutBtn = document.getElementById("logout-btn");
-
-
-const personBackBtn = document.getElementById("person-back-btn");
-
-personBackBtn.addEventListener("click", () => {
-  personForm.reset();  // clear new person fields
-  resetView();         // return to Login/New Person choice
-});
-
 
 // --- INITIAL STATE ---
 function resetView() {
@@ -51,24 +42,14 @@ newEntryBtnOption.addEventListener("click", () => {
 });
 
 // --- Render Login Form ---
-
 const loginForm = document.createElement("form");
 loginForm.innerHTML = `
   <h2>Login</h2>
   <input type="text" id="login_name" placeholder="First Name" required>
   <input type="email" id="login_email" placeholder="Email" required>
   <button type="submit">Login</button>
-   <button type="button" id="login-back-btn">⬅ Back</button>
 `;
 loginContainer.appendChild(loginForm);
-
-// --- Handle Back Button ---
-
-loginForm.querySelector("#login-back-btn").addEventListener("click", () => {
-  loginForm.reset();   // clear the login fields
-  resetView();         // go back to option-container (Login/New Person)
-});
-
 
 // --- Helper: non-blocking success banner ---
 function showBanner(msg, bg = "lightgreen") {
@@ -82,7 +63,6 @@ function showBanner(msg, bg = "lightgreen") {
   document.body.prepend(bar);
   return bar;
 }
-
 
 // --- LOGIN ---
 loginForm.addEventListener("submit", async (e) => {

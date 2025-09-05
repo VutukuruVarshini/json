@@ -17,15 +17,6 @@ const loginBtnOption = document.getElementById("login-btn");
 const newEntryBtnOption = document.getElementById("new-entry-btn");
 const logoutBtn = document.getElementById("logout-btn");
 
-
-const personBackBtn = document.getElementById("person-back-btn");
-
-personBackBtn.addEventListener("click", () => {
-  personForm.reset();  // clear new person fields
-  resetView();         // return to Login/New Person choice
-});
-
-
 // --- INITIAL STATE ---
 function resetView() {
   optionContainer.style.display = "block";

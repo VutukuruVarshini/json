@@ -82,5 +82,12 @@
     "first_name": "Rachel",
     "last_name": "Howell",
     "avatar": "https://reqres.in/img/faces/12-image.jpg"
+  },
+  {
+    "id": 13,
+    "first_name": "Varshini",
+    "last_name": "Vut",
+    "email": "vutu@gmail.com",
+    "avatar": "http://localhost:8000/uploads/1757050713798-profile.png"
   }
 ]
